@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="./index1.css">
+</head>
+
+<body>
+    <div class="logo"><img src="./logo (2).png" alt="Company Logo"></div>
+
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search worker by occupation (e.g., painter, caretaker)">
+        <select class="filter-select" id="experienceFilter">
+            <option value="">Filter by Experience</option>
+            <option value="5">5+ Years</option>
+            <option value="7">7+ Years</option>
+        </select>
+        <select class="filter-select" id="wageFilter">
+            <option value="">Filter by Wage</option>
+            <option value="18">$18 or More</option>
+            <option value="20">$20 or More</option>
+        </select>
+        <button class="search-button" onclick="searchWorker()">Search</button>
+    </div>
+
+
+
+    <div class="main">
+        <div class="card">
+            <img src="./men.jpg" alt="Man">
+            <div>
+                <h3>Manik</h3>
+                <p>Occupation: Painter || Experience: 7 Years || Wage per Hour: $20</p>
+
+
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="./WhatsApp Image 2025-02-07 at 14.47.46_c328af98.jpg" alt="women">
+            <div>
+                <h3>George</h3>
+
+                <p>Occupation: Interior Designer || Experience: 7 Years || Wage per Hour: $20</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./men.jpg" alt="Man">
+            <div>
+                <h3>Bush</h3>
+                <p>Occupation: Electrician || Experience: 9 Years || Wage per Hour: $40</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./WhatsApp Image 2025-02-07 at 14.47.46_c328af98.jpg" alt="women">
+            <div>
+                <h3>Jenelia</h3>
+                <p>Occupation: Cook || Experience: 4 Years || Wage per Hour: $30</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="card">
+            <img src="./men.jpg" alt="Man">
+            <div>
+                <h3>Harry</h3>
+                <p>Occupation: Home cleaner || Experience: 6 Years || Wage per Hour: $35</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="./WhatsApp Image 2025-02-07 at 14.47.46_c328af98.jpg" alt="women">
+            <div>
+                <h3>Sneha</h3>
+                <p>Occupation: Laundry || Experience: 3 Years || Wage per Hour: $20</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./men.jpg" alt="Man">
+            <div>
+                <h3>Namita</h3>
+                <p>Occupation: Care Taker || Experience: 7 Years || Wage per Hour: $30</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./WhatsApp Image 2025-02-07 at 14.47.46_c328af98.jpg" alt="women">
+            <div>
+                <h3>Tom</h3>
+                <p>Occupation: Gardner || Experience: 4 Years || Wage per Hour: $10</p>
+                <button class="redirect-button" onclick="redirectToHirePage()">Hire me!</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToHirePage() {
+            window.location.href = "hire.html";
+        }
+
+        function searchWorker() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var painter = document.getElementById("workerPainter");
+            var caretaker = document.getElementById("workerCaretaker");
+
+            painter.style.display = "none";
+            caretaker.style.display = "none";
+
+            if (input === "painter") {
+                painter.style.display = "block";
+            } else if (input === "caretaker") {
+                caretaker.style.display = "block";
+            }
+        }
+        //
+        function searchWorker() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var experienceFilter = document.getElementById("experienceFilter").value;
+            var wageFilter = document.getElementById("wageFilter").value;
+            var workers = document.querySelectorAll(".worker-container");
+
+            workers.forEach(worker => {
+                var occupation = worker.querySelector("p").textContent.toLowerCase();
+                var experience = worker.getAttribute("data-experience");
+                var wage = worker.getAttribute("data-wage");
+
+                worker.style.display = "none";
+
+                if ((input === "" || occupation.includes(input)) &&
+                    (experienceFilter === "" || parseInt(experience) >= parseInt(experienceFilter)) &&
+                    (wageFilter === "" || parseInt(wage) >= parseInt(wageFilter))) {
+                    worker.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

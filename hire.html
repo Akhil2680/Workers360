@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire a Worker</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(126, 219, 229);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .worker-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        
+        .worker-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .hire-button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(10, 196, 242, 0.899);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hire-button:hover {
+            background-color: rgba(13, 91, 110, 0.899);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="worker-container">
+        <img src="men.jpg" alt="Worker Photo" class="worker-photo">
+        <h2>John Doe</h2>
+        <p>Experience: 5 Years</p>
+        <p>Wage per Hour: $15</p>
+        <label for="work-time">Choose Time:</label>
+        <input type="time" id="work-time" class="input-field">
+        <label for="work-date">Choose Date:</label>
+        <input type="date" id="work-date" class="input-field">
+        <label for="work-duration">Hire for:</label>
+        <input type="number" id="work-duration" class="input-field" value="1" min="1"> hrs
+        <button class="hire-button">Hire Worker</button>
+    </div>
+</body>
+
+</html>

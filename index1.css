@@ -1,0 +1,104 @@
+body {
+    background-color: rgb(126, 219, 229);
+    margin-left: 10px;
+}
+
+.logo {
+    position: absolute;
+    top: .1px;
+    left: 5px;
+    width: 200px;
+    height: 200px;
+    font-size: 2em;
+}
+
+.card {
+    background-color: rgb(200, 240, 233);
+    width: 300px;
+    height: 354px;
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    transition-duration: 1s;
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+h3,
+p {
+    text-align: center;
+    border-radius: 8px;
+}
+
+p {
+    border: 2px solid black;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+.p:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+button {
+    background-color: rgba(10, 196, 242, 0.899);
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.search-input,
+.filter-select {
+    padding: 10px;
+    width: 90%;
+    max-width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #2a2d6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .worker-container {
+        width: 100%;
+    }
+}
